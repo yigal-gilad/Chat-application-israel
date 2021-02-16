@@ -1,0 +1,71 @@
+
+
+<div class="input-group mb-3">
+    <input type="text" class="form-control" [(ngModel)]="chatInput" placeholder="Write something here...">
+    <div class="input-group-append">
+        <button class="btn btn-dark" (click)="sendMessege()" [disabled]="!chatInput || 
+        state.state.current_user.isbanned ||
+         state.state.is_logging ||
+         !state.state.is_logged">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+<div *ngIf="state.state.is_logged">
+<p style="color: red;" *ngIf="state.state.current_user.isbanned">
+    Banned users cannot use the chat</p>
+    </div>
+
+    <p *ngIf="!state.state.is_logged && !state.state.is_logging">
+        SIGN UP in order to use the chat</p>
+
+<ul class="list-group" *ngIf="state.state.chat_messeges.length" style="word-wrap: break-word">
+    <li class="list-group-item" *ngFor="let x of state.state.chat_messeges; let i = index">
+        <p><span class="badge badge-primary" *ngIf="i === 0">new!</span></p>
+        <div class="media">
+
+            <img *ngIf="x.writer_profile_image" [src]="x.writer_profile_image" class="rounded align-self-start mr-3"
+                style="width:60px">
+
+            <div class="media-body">
+                
+                <h5>
+                    {{ x.writer_name }}
+                </h5>
+               
+                <p>{{ x.writer_role }}</p>
+               
+            </div>
+        </div>
+        <h6>says (at {{ x.time }}):</h6>
+        {{ x.messege }}
+    </li>
+</ul>
+
+<!-- <div class="modal fade" id="myModal2">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content"> -->
+
+<!-- Modal Header -->
+<!-- <div class="modal-header">
+                <h4 class="modal-title">Add new chat room</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div> -->
+
+<!-- Modal body -->
+<!-- <div class="modal-body">
+                <div class="form-group">
+                    <label>New chat room name:</label>
+                    <input type="text" [(ngModel)]="newChatRoomNameInput" class="form-control"
+                        placeholder="insert new chat room name here...">
+                    <p *ngIf=" newChatRoomNameInput.length > 15" style="color: red;">Too long name</p>
+                    <br>
+
+                    <button type="button" class="btn btn-dark" [disabled]="!newChatRoomNameInput ||
+                         newChatRoomNameInput.length > 15" (click)="addChatRoom()" data-dismiss="modal">
+                        <i class="fas fa-plus"></i> Add new chat room</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
