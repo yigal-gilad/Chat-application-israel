@@ -10,6 +10,20 @@ https://chat-app-israel.herokuapp.com
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Technologies used
+
+JavaScript,
+TypeScript,
+Angular 8,
+Bootstrap 4,
+Font awesome,
+Node.js,
+Express.js,
+JWT,
+Joi,
+Mongoose,
+MongoDB.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
