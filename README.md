@@ -1,6 +1,10 @@
-# ECommerce
+# Chat applicatiom israel
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+
+## Visit website with this link
+
+https://chat-app-israel.herokuapp.com
 
 ## Development server
 
